@@ -1,10 +1,22 @@
 #include <iostream>
-#include "string.h"
+#include "bace_string.h"
 
 int main(void)
 {
-	ghl::string str("abcde");
-	str.ends_with("cdae");
+	zxc::string str("aaaaa");
+	zxc::string str2("bbbbb");
+
+	zxc::string str3 = str + 10;
+
+	zxc::wstring wstr(L"aaaaa");
+	zxc::wstring wstr2(L"aaaaa");
+
+	auto wstr3 = wstr + 10;
+
+	zxc::string erase("Hello World");
+	auto erase1 = zxc::erase_if(erase, [](char c){return c == ' ';});
+
+	zxc::string strr = zxc::string("aaa") + 10.3 + 3 + 5 + 28;
 
 	return 0;
 }
