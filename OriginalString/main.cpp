@@ -9,7 +9,7 @@ int main(void)
 	zxc::string str3 = str + 10;
 
 	zxc::wstring wstr(L"aaaaa");
-	zxc::wstring wstr2(L"aaaaa");
+	zxc::wstring wstr2(L"bbbbb");
 
 	auto wstr3 = wstr + 10;
 
@@ -17,6 +17,9 @@ int main(void)
 	auto erase1 = zxc::erase_if(erase, [](char c){return c == ' ';});
 
 	zxc::string strr = zxc::string("aaa") + 10.3 + 3 + 5 + 28;
+
+	//str = zxc::convWString(wstr2);
+	wstr2 = zxc::convString(str);
 
 	return 0;
 }

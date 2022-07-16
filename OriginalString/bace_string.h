@@ -703,21 +703,21 @@ namespace zxc
 		return str;
 	}
 
-	inline wstring convString(const string& str) {
+	inline wstring strtoowstr(const string& str) {
 		size_t i;
-		wchar_t* buffer = new wchar_t[str.size() + 1];
+		wchar_t* buffer = static_cast<wchar_t*>(_malloca((str.size() + 1) * sizeof(wchar_t)));
 		mbstowcs_s(&i, buffer, str.size() + 1, str.c_str(), _TRUNCATE);
-		wstring wstr(buffer);
-		delete[] buffer;
+		wstring wstr = buffer;
+		_freea(buffer);
 		return wstr;
 	}
 
 	inline string convWString(const wstring& wstr) {
 		size_t i;
-		char* buffer = new char[wstr.size() * MB_CUR_MAX + 1];
+		char* buffer = static_cast<char*>(_malloca((wstr.size() * MB_CUR_MAX + 1) * sizeof(char)));
 		wcstombs_s(&i, buffer, wstr.size() * MB_CUR_MAX + 1, wstr.c_str(), _TRUNCATE);
 		string str = buffer;
-		delete[] buffer;
+		_freea(buffer);
 		return str;
 	}
 }
