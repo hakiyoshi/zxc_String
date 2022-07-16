@@ -18,8 +18,8 @@ int main(void)
 
 	zxc::string strr = zxc::string("aaa") + 10.3 + 3 + 5 + 28;
 
-	//str = zxc::convWString(wstr2);
-	wstr2 = zxc::convString(str);
+	//str = zxc::wstrToStr(wstr2);
+	wstr2 = zxc::strToWstr(str);
 
 	return 0;
 }

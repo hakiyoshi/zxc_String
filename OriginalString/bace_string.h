@@ -703,7 +703,7 @@ namespace zxc
 		return str;
 	}
 
-	inline wstring strtoowstr(const string& str) {
+	inline wstring strToWstr(const string& str) {
 		size_t i;
 		wchar_t* buffer = static_cast<wchar_t*>(_malloca((str.size() + 1) * sizeof(wchar_t)));
 		mbstowcs_s(&i, buffer, str.size() + 1, str.c_str(), _TRUNCATE);
@@ -712,7 +712,7 @@ namespace zxc
 		return wstr;
 	}
 
-	inline string convWString(const wstring& wstr) {
+	inline string wstrToStr(const wstring& wstr) {
 		size_t i;
 		char* buffer = static_cast<char*>(_malloca((wstr.size() * MB_CUR_MAX + 1) * sizeof(char)));
 		wcstombs_s(&i, buffer, wstr.size() * MB_CUR_MAX + 1, wstr.c_str(), _TRUNCATE);
