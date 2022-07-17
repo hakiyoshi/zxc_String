@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bace_string.h">
+    <ClInclude Include="zxc_string.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
